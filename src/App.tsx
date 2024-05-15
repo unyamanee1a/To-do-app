@@ -1,15 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <TextColor text="Hello World" color="red" />
+        <TextColor text="สวัสดีชาวโลก" color="blue" />
+        <TextColor text="อัญมณี" />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -22,5 +22,15 @@ function App() {
     </div>
   );
 }
+
+const TextColor = ({
+  text,
+  color = "black",
+}: {
+  text: string;
+  color?: string;
+}) => {
+  return <p style={{ color }}>{text.toUpperCase()}</p>;
+};
 
 export default App;
