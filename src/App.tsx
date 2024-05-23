@@ -1,9 +1,7 @@
-import React from "react";
-import logo from "./logo.svg";
 import photo from "./personlogo.jpg";
 import gear from "./gear.png";
 import "./App.css";
-const d = new Date();
+
 function App() {
   return (
     <div>
@@ -18,7 +16,7 @@ function App() {
             <div className="left-top-bar">
               <div className="user">
                 <div className="menu-bar">
-                  <div className="photo">{/* <img src={photo} /> */}</div>
+                  <img className="photo" src={photo} />
                   <div className="personal">
                     <div className="profile"> Anyamanee </div>
                     <div className="status"> Student </div>
@@ -33,7 +31,7 @@ function App() {
               </div>
             </div>
             <div className="bottom">
-              {/* <img src={gear} /> */}
+              <img className="gear" src={gear} />
               <div className="setting">Setting</div>
             </div>
           </div>
