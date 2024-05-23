@@ -1,6 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
+import photo from "./personlogo.jpg";
+import gear from "./gear.png";
 import "./App.css";
+const d = new Date();
 function App() {
   return (
     <div>
@@ -10,32 +13,38 @@ function App() {
       </style>
       ;
       <div className="container">
-        <div className="left-bar">
-          <div className="left-top-bar">
-            <div className="user">
-              <div className="menu-bar">
-                <div className="photo">
-                  <img src="personlogo.jpg" />
+        <div className="content">
+          <div className="left-bar">
+            <div className="left-top-bar">
+              <div className="user">
+                <div className="menu-bar">
+                  <div className="photo">{/* <img src={photo} /> */}</div>
+                  <div className="personal">
+                    <div className="profile"> Anyamanee </div>
+                    <div className="status"> Student </div>
+                  </div>
                 </div>
-                <div className="personal">
-                  <div className="profile"> Anyamanee </div>
-                  <div className="status"> Student </div>
-                </div>
+                <div className="line"></div>
               </div>
-              <div className="line"></div>
+              <div className="nevigation-bar">
+                <div className="main">Main</div>
+                <div className="lesson">Lesson</div>
+                <div className="homework">Home work</div>
+              </div>
             </div>
-            <div className="nevigation-bar">
-              <div className="main">Main</div>
-              <div className="lesson">Lesson</div>
-              <div className="homework">Home work</div>
+            <div className="bottom">
+              {/* <img src={gear} /> */}
+              <div className="setting">Setting</div>
             </div>
           </div>
-          <div className="bottom">
-            <img src="c:\Users\aun_5\OneDrive\เดสก์ท็อป\toDoApp\gear icon.png" />
-            <div className="setting">Setting</div>
+          <div className="right-bar">
+            <div className="date">15 May 2024 20:00 TH</div>
+            <div className="reminder-bar">
+              <div className="reminder">Today main focus</div>
+              <div className="assign">Home work : Design to ao app</div>
+            </div>
           </div>
         </div>
-        <div className="right-bar"></div>
       </div>
     </div>
   );
