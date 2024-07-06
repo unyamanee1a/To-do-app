@@ -2,8 +2,20 @@ import photo from "./personlogo.jpg";
 import gear from "./gear.png";
 import "./App.css";
 import { datetimeFormat } from "./utils/date";
+import { useState } from "react";
 
 function App() {
+  const [locale, setLocale] = useState<string>("US");
+  const fetchCurrentLocale = () => {
+    fetch("https://ipapi.co/country/")
+      .then((response) => {
+        return response.text();
+      })
+      .then((response) => {
+        setLocale(response);
+      });
+  };
+  fetchCurrentLocale();
   return (
     <div>
       <style>
@@ -36,7 +48,7 @@ function App() {
             </div>
           </div>
           <div className="right-bar">
-            <div className="date">{datetimeFormat(new Date())}</div>
+            <div className="date">{datetimeFormat(new Date(), locale)}</div>
             <Main />
           </div>
         </div>
