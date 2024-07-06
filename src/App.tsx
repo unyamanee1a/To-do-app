@@ -5,7 +5,7 @@ import { datetimeFormat } from "./utils/date";
 import { useState } from "react";
 
 function App() {
-  const [locale, setLocale] = useState<string>("US");
+  const [locale, setLocale] = useState<string>("TH");
   const fetchCurrentLocale = () => {
     fetch("https://ipapi.co/country/")
       .then((response) => {
