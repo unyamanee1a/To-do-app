@@ -1,6 +1,7 @@
 import photo from "./personlogo.jpg";
 import gear from "./gear.png";
 import "./App.css";
+import { datetimeFormat } from "./utils/date";
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
             </div>
           </div>
           <div className="right-bar">
-            <div className="date">15 May 2024 20:00 TH</div>
+            <div className="date">{datetimeFormat(new Date())}</div>
             <Main />
           </div>
         </div>
