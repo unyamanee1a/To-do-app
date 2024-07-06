@@ -13,5 +13,11 @@ describe("Date", () => {
             const result = datetimeFormat(datetime,"US")
             expect(result).toEqual("6 July 2024 18:33 US")
         })
+
+        it("should return date fomat is 'dd MMMM yyyy HH:mm US' should display hour and minute with 2 digit", () => {
+            const datetime = new Date(2024,6,6,7,5)
+            const result = datetimeFormat(datetime,"US")
+            expect(result).toEqual("6 July 2024 07:05 US")
+        })
     })
 })
