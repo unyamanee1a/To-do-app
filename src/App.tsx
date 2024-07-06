@@ -36,10 +36,7 @@ function App() {
           </div>
           <div className="right-bar">
             <div className="date">15 May 2024 20:00 TH</div>
-            <div className="reminder-bar">
-              <div className="reminder">Today main focus</div>
-              <div className="assign">Home work : Design to ao app</div>
-            </div>
+            <Main />
           </div>
         </div>
       </div>
@@ -48,3 +45,12 @@ function App() {
 }
 
 export default App;
+
+function Main() {
+  return (
+    <div className="reminder-bar">
+      <div className="reminder">Today main focus</div>
+      <div className="assign">Home work : Design to ao app</div>
+    </div>
+  );
+}
