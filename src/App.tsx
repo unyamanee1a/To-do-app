@@ -3,6 +3,10 @@ import gear from "./gear.png";
 import "./App.css";
 import { datetimeFormat } from "./utils/date";
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homeworks from "./pages/Homeworks";
+import Home from "./pages/Home";
+import Lesson from "./pages/Lesson";
 
 function App() {
   const [locale, setLocale] = useState<string>("TH");
@@ -16,6 +20,17 @@ function App() {
       });
   };
   fetchCurrentLocale();
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Lesson" element={<Lesson />} />
+          <Route path="/Homeworks" element={<Homeworks />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
   return (
     <div>
       <style>
