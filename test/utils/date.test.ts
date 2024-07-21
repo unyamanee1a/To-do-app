@@ -1,4 +1,4 @@
-import { datetimeFormat } from "./date"
+import { datetimeFormat } from "../../src/utils/date"
 
 describe("Date", () => {
     describe("datetimeFormat", () => {
