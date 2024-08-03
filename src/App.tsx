@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [locale, setLocale] = useState<string>("TH");
+  const [isShowLessonPage, setIsShowLessonPage] = useState<Boolean>(false);
   const fetchCurrentLocale = () => {
     fetch("https://ipapi.co/country/")
       .then((response) => {
@@ -38,7 +39,14 @@ function App() {
               </div>
               <div className="nevigation-bar">
                 <div className="main">Main</div>
-                <div className="lesson">Lesson</div>
+                <div
+                  className="lesson"
+                  onClick={() => {
+                    setIsShowLessonPage(true);
+                  }}
+                >
+                  Lesson
+                </div>
                 <div className="homework">Home work</div>
               </div>
             </div>
@@ -49,7 +57,7 @@ function App() {
           </div>
           <div className="right-bar">
             <div className="date">{datetimeFormat(new Date(), locale)}</div>
-            <Main />
+            {isShowLessonPage ? <Lesson /> : <Main />}
           </div>
         </div>
       </div>
@@ -66,4 +74,8 @@ function Main() {
       <div className="assign">Home work : Design to ao app</div>
     </div>
   );
+}
+
+function Lesson() {
+  return <div>Lesson</div>;
 }
