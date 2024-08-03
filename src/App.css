@@ -92,7 +92,19 @@ div{
 }
 
 .lesson {
+  cursor: pointer;
   padding-left: 76px;
+}
+
+.lesson:hover {
+  background-color:  rgba(0, 118, 168, 0.64);
+  border-color: rgba(0, 118, 168, 0.64);
+  color: #ffffff;
+  border-radius: 30px;
+  padding-left: 76px;
+  display: flex;
+  align-items: center;
+  justify-items: center
 }
 
 .homework {
