@@ -38,7 +38,14 @@ function App() {
                 <div className="line"></div>
               </div>
               <div className="nevigation-bar">
-                <div className="main">Main</div>
+                <div
+                  className="main"
+                  onClick={() => {
+                    setIsShowLessonPage(false);
+                  }}
+                >
+                  Main
+                </div>
                 <div
                   className="lesson"
                   onClick={() => {

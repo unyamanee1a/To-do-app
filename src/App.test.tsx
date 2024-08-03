@@ -30,4 +30,18 @@ describe("App", () => {
     expect(headerLessonAfterClick).toBeInTheDocument();
     expect(mainSectionAfterClick).not.toBeInTheDocument();
   });
+
+  test("user can back to main page when click main button", () => {
+    render(<App />);
+    const lessonButton = screen.getByText("Lesson");
+    const mainButton = screen.getByText("Main");
+
+    userEvent.click(lessonButton);
+    userEvent.click(mainButton);
+
+    const [_, headerLesson] = screen.queryAllByText("Lesson");
+
+    expect(screen.queryByText("Today main focus")).toBeInTheDocument();
+    expect(headerLesson).toBeUndefined();
+  });
 });
