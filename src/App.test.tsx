@@ -13,18 +13,21 @@ describe("App", () => {
 
   test("user should see lesson page when click lesson button", () => {
     render(<App />);
-    const mainSection = screen.getByText("Today main focus");
+    const mainSection = screen.queryByText("Today main focus");
     const [lessonButtonBeforeClick, headerLessonBeforeClick] =
-      screen.getAllByText("Lesson");
+      screen.queryAllByText("Lesson");
     expect(lessonButtonBeforeClick).toBeInTheDocument();
     expect(headerLessonBeforeClick).toBeUndefined();
+    expect(mainSection).toBeInTheDocument();
 
     userEvent.click(lessonButtonBeforeClick);
 
+    const mainSectionAfterClick = screen.queryByText("Today main focus");
     const [lessonButtonAfterClick, headerLessonAfterClick] =
-      screen.getAllByText("Lesson");
+      screen.queryAllByText("Lesson");
 
     expect(lessonButtonAfterClick).toBeInTheDocument();
     expect(headerLessonAfterClick).toBeInTheDocument();
+    expect(mainSectionAfterClick).not.toBeInTheDocument();
   });
 });
